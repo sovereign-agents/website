@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ProblemSection from '../components/ProblemSection.astro';
+import SolutionSection from '../components/SolutionSection.astro';
+import FeaturesSection from '../components/FeaturesSection.astro';
+import ArchitectureSection from '../components/ArchitectureSection.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<BaseLayout title="Sovereign Agents - Your AI. Your Rules. Your Sovereignty.">
+  <HeroSection />
+  <ProblemSection />
+  <SolutionSection />
+  <FeaturesSection />
+  <ArchitectureSection />
+  <CTASection />
+</BaseLayout>
+
+<style>
+  /* Global page styles */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Smooth section transitions */
+  section {
+    position: relative;
+  }
+  
+  /* Add subtle parallax effect for background elements */
+  .network-bg {
+    will-change: transform;
+  }
+  
+  /* Optimize animations for performance */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+
+<script>
+  // Add smooth scrolling behavior for anchor links
+  document.addEventListener('DOMContentLoaded', () => {
+    // Handle scroll-based animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+    
+    // Observe all sections for entrance animations
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+    
+    // Add parallax effect to background elements
+    const parallaxElements = document.querySelectorAll('.network-bg');
+    
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallaxSpeed = 0.5;
+      
+      parallaxElements.forEach((element) => {
+        const yPos = -(scrolled * parallaxSpeed);
+        element.style.transform = `translateY(${yPos}px)`;
+      });
+    });
+    
+    // Smooth scroll for CTA buttons
+    const ctaButtons = document.querySelectorAll('[href^="#"]');
+    ctaButtons.forEach((button) => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(button.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  });
+</script>

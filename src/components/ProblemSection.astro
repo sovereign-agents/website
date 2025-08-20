@@ -1,0 +1,233 @@
+---
+---
+
+<section class="problem-section py-20 bg-gradient-to-b from-dark-bg to-dark-surface">
+  <div class="container mx-auto px-6">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section header -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6">
+          <span class="text-red-500 text-glow">The Problem</span> 
+          <span class="text-white">is Clear</span>
+        </h2>
+      </div>
+      
+      <!-- Problem grid -->
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left side - Problems -->
+        <div class="space-y-8">
+          <!-- Big Tech problem -->
+          <div class="problem-card group">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center">
+                  <span class="text-red-500 text-2xl">⚠️</span>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-red-400 mb-3">Big Tech Surveillance</h3>
+                <p class="text-gray-300 leading-relaxed">
+                  Big Tech has turned you into the product. Your data feeds their algorithms. 
+                  Your privacy funds their profits. Your digital life operates on their terms.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Passive AI problem -->
+          <div class="problem-card group">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center">
+                  <span class="text-orange-500 text-2xl">🤖</span>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-orange-400 mb-3">Passive AI Limitations</h3>
+                <p class="text-gray-300 leading-relaxed">
+                  Meanwhile, you're stuck with passive AI chatbots that wait for commands 
+                  instead of anticipating your needs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right side - Visualization -->
+        <div class="relative">
+          <!-- Central surveillance hub -->
+          <div class="central-hub">
+            <div class="surveillance-eye">
+              <div class="eye-center"></div>
+            </div>
+            <div class="hub-label">Big Tech</div>
+          </div>
+          
+          <!-- Data streams -->
+          <div class="data-streams">
+            <!-- User data points -->
+            <div class="data-point dp-1">
+              <div class="point"></div>
+              <div class="label">Your Data</div>
+            </div>
+            <div class="data-point dp-2">
+              <div class="point"></div>
+              <div class="label">Your Privacy</div>
+            </div>
+            <div class="data-point dp-3">
+              <div class="point"></div>
+              <div class="label">Your Control</div>
+            </div>
+            <div class="data-point dp-4">
+              <div class="point"></div>
+              <div class="label">Your Choice</div>
+            </div>
+          </div>
+          
+          <!-- Data flow lines -->
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 300">
+            <defs>
+              <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                      refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444" />
+              </marker>
+            </defs>
+            
+            <!-- Animated data flow lines -->
+            <path d="M 80 60 Q 150 100 200 150" 
+                  stroke="#ef4444" 
+                  stroke-width="2" 
+                  fill="none" 
+                  marker-end="url(#arrowhead)"
+                  class="data-flow flow-1" />
+                  
+            <path d="M 320 80 Q 250 110 200 150" 
+                  stroke="#ef4444" 
+                  stroke-width="2" 
+                  fill="none" 
+                  marker-end="url(#arrowhead)"
+                  class="data-flow flow-2" />
+                  
+            <path d="M 90 220 Q 140 180 200 150" 
+                  stroke="#ef4444" 
+                  stroke-width="2" 
+                  fill="none" 
+                  marker-end="url(#arrowhead)"
+                  class="data-flow flow-3" />
+                  
+            <path d="M 310 240 Q 260 190 200 150" 
+                  stroke="#ef4444" 
+                  stroke-width="2" 
+                  fill="none" 
+                  marker-end="url(#arrowhead)"
+                  class="data-flow flow-4" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .problem-card {
+    @apply p-6 bg-dark-surface/50 rounded-xl border border-dark-border
+           transition-all duration-300 hover:border-red-500/50 
+           hover:shadow-lg backdrop-blur-sm;
+  }
+  
+  .problem-card:hover {
+    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.1);
+  }
+  
+  .central-hub {
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+  }
+  
+  .surveillance-eye {
+    @apply w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center
+           border-4 border-red-500 relative;
+    animation: surveillance-scan 4s ease-in-out infinite;
+  }
+  
+  .eye-center {
+    @apply w-8 h-8 bg-red-500 rounded-full;
+    box-shadow: 0 0 20px #ef4444;
+  }
+  
+  .hub-label {
+    @apply text-red-400 font-bold text-center mt-2;
+  }
+  
+  .data-point {
+    @apply absolute text-sm;
+  }
+  
+  .data-point .point {
+    @apply w-3 h-3 bg-gray-400 rounded-full mb-1;
+    animation: data-pulse 2s ease-in-out infinite;
+  }
+  
+  .data-point .label {
+    @apply text-gray-400 text-xs whitespace-nowrap;
+  }
+  
+  .dp-1 { top: 20%; left: 10%; animation-delay: 0s; }
+  .dp-2 { top: 20%; right: 10%; animation-delay: 0.5s; }
+  .dp-3 { bottom: 20%; left: 10%; animation-delay: 1s; }
+  .dp-4 { bottom: 20%; right: 10%; animation-delay: 1.5s; }
+  
+  .data-flow {
+    stroke-dasharray: 10 5;
+    stroke-dashoffset: 0;
+    animation: data-stream 3s linear infinite;
+  }
+  
+  .flow-1 { animation-delay: 0s; }
+  .flow-2 { animation-delay: 0.5s; }
+  .flow-3 { animation-delay: 1s; }
+  .flow-4 { animation-delay: 1.5s; }
+  
+  @keyframes surveillance-scan {
+    0%, 100% { 
+      transform: rotate(0deg) scale(1);
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+    }
+    25% { 
+      transform: rotate(90deg) scale(1.1);
+      box-shadow: 0 0 30px rgba(239, 68, 68, 0.8);
+    }
+    50% { 
+      transform: rotate(180deg) scale(1);
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+    }
+    75% { 
+      transform: rotate(270deg) scale(1.1);
+      box-shadow: 0 0 30px rgba(239, 68, 68, 0.8);
+    }
+  }
+  
+  @keyframes data-pulse {
+    0%, 100% { 
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    50% { 
+      transform: scale(1.5);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes data-stream {
+    0% { 
+      stroke-dashoffset: 0;
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% { 
+      stroke-dashoffset: -30;
+      opacity: 0.3;
+    }
+  }
+</style>
