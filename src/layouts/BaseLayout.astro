@@ -12,7 +12,8 @@ const { title, description = "Sovereign Agents - Your AI. Your Rules. Your Sover
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+    <meta name="theme-color" content="#0a0a0a" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     
@@ -56,6 +57,33 @@ const { title, description = "Sovereign Agents - Your AI. Your Rules. Your Sover
       
       .text-glow {
         text-shadow: 0 0 20px currentColor;
+      }
+      
+      /* Mobile-specific optimizations */
+      @media (max-width: 640px) {
+        .text-glow {
+          text-shadow: 0 0 10px currentColor;
+        }
+        
+        body {
+          font-size: 14px;
+        }
+      }
+      
+      /* Prevent horizontal scroll on mobile */
+      @media (max-width: 768px) {
+        html, body {
+          max-width: 100%;
+          overflow-x: hidden;
+        }
+      }
+      
+      /* Touch-friendly tap targets */
+      @media (pointer: coarse) {
+        button, a {
+          min-height: 44px;
+          min-width: 44px;
+        }
       }
     </style>
   </head>

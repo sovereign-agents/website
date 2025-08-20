@@ -1,18 +1,18 @@
 ---
 ---
 
-<section class="cta-section py-20 bg-gradient-to-b from-dark-bg via-dark-surface to-dark-bg">
-  <div class="container mx-auto px-6">
+<section class="cta-section py-12 sm:py-16 md:py-20 bg-gradient-to-b from-dark-bg via-dark-surface to-dark-bg">
+  <div class="container mx-auto px-4 sm:px-6">
     <div class="max-w-6xl mx-auto">
       
       <!-- Vision Statement -->
-      <div class="text-center mb-20">
-        <h2 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+      <div class="text-center mb-12 sm:mb-16 md:mb-20">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight">
           <span class="text-white">The Future is</span><br>
           <span class="text-cyber-green text-glow">Distributed</span>
         </h2>
         
-        <div class="max-w-4xl mx-auto space-y-6 text-lg text-gray-300 leading-relaxed">
+        <div class="max-w-4xl mx-auto space-y-4 sm:space-y-6 text-base sm:text-lg text-gray-300 leading-relaxed px-4 sm:px-0">
           <p>
             We're not just building better AI assistants. We're creating the infrastructure 
             for a <span class="text-electric-blue font-semibold">parallel digital economy</span> 
@@ -27,8 +27,8 @@
       </div>
       
       <!-- Network visualization -->
-      <div class="network-visualization mb-20">
-        <div class="network-container">
+      <div class="network-visualization mb-12 sm:mb-16 md:mb-20">
+        <div class="network-container h-64 sm:h-80 md:h-96">
           <!-- Central hub -->
           <div class="network-hub">
             <div class="hub-core"></div>
@@ -101,12 +101,12 @@
       <!-- Call to Action -->
       <div class="cta-content">
         <div class="text-center mb-16">
-          <h3 class="text-3xl md:text-4xl font-bold mb-6">
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">
             <span class="text-white">Ready to Reclaim Your</span><br>
             <span class="text-cyber-green text-glow">Digital Sovereignty?</span>
           </h3>
           
-          <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+          <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-8 md:mb-12 max-w-3xl mx-auto px-4 sm:px-0">
             Join the movement toward truly private, truly powerful AI assistance.
           </p>
           
@@ -134,7 +134,7 @@
         </div>
         
         <!-- Feature highlights row -->
-        <div class="grid md:grid-cols-4 gap-6 mb-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12 md:mb-16">
           <div class="highlight-card">
             <div class="highlight-icon text-cyber-green">🛡️</div>
             <div class="highlight-title">Privacy First</div>
@@ -173,7 +173,7 @@
   }
   
   .network-container {
-    @apply relative h-96 flex items-center justify-center;
+    @apply relative flex items-center justify-center;
   }
   
   .network-hub {
@@ -181,13 +181,13 @@
   }
   
   .hub-core {
-    @apply w-20 h-20 bg-gradient-to-br from-cyber-green to-electric-blue rounded-full;
+    @apply w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-cyber-green to-electric-blue rounded-full;
     box-shadow: 0 0 40px rgba(0, 255, 65, 0.6);
     animation: hub-pulse 4s ease-in-out infinite;
   }
   
   .hub-ring {
-    @apply absolute inset-0 w-20 h-20 border-4 border-white/30 rounded-full;
+    @apply absolute inset-0 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 border-2 md:border-4 border-white/30 rounded-full;
     animation: hub-rotate 20s linear infinite;
   }
   
@@ -205,8 +205,8 @@
   }
   
   .node-avatar {
-    @apply w-10 h-10 bg-dark-surface border-2 border-gray-600 rounded-full
-           flex items-center justify-center text-lg;
+    @apply w-8 h-8 sm:w-10 sm:h-10 bg-dark-surface border border-gray-600 rounded-full
+           flex items-center justify-center text-sm sm:text-lg;
     animation: node-breathe 3s ease-in-out infinite;
   }
   
