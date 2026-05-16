@@ -4,105 +4,42 @@ export interface Props {
   description?: string;
 }
 
-const { title, description = "Sovereign Agents - Your AI. Your Rules. Your Sovereignty." } = Astro.props;
+const { title, description = "Sovereign Agents — AI agents that run in confidential computing enclaves with confidential inference. Your data, protected by silicon." } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="bg-dark-bg">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09090B" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
 
-    <!-- Plausible Analytics -->
     <script defer data-domain="sovereignagents.ai" src="https://analytics.cypherpunk.cloud/js/script.js"></script>
 
-    <!-- Preload fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-      * {
-        box-sizing: border-box;
-      }
-      
-      html {
-        scroll-behavior: smooth;
-      }
-      
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
       body {
-        margin: 0;
-        padding: 0;
-        font-family: 'JetBrains Mono', monospace;
-        background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
-        color: #ffffff;
+        font-family: 'Inter', system-ui, sans-serif;
+        background: #09090B;
+        color: #F5F5F5;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         overflow-x: hidden;
       }
-      
-      .network-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.1;
-        pointer-events: none;
-        z-index: -1;
-      }
-      
-      .glow {
-        filter: drop-shadow(0 0 10px currentColor);
-      }
-      
-      .text-glow {
-        text-shadow: 0 0 20px currentColor;
-      }
-      
-      /* Mobile-specific optimizations */
-      @media (max-width: 640px) {
-        .text-glow {
-          text-shadow: 0 0 10px currentColor;
-        }
-        
-        body {
-          font-size: 14px;
-        }
-      }
-      
-      /* Prevent horizontal scroll on mobile */
       @media (max-width: 768px) {
-        html, body {
-          max-width: 100%;
-          overflow-x: hidden;
-        }
-      }
-      
-      /* Touch-friendly tap targets */
-      @media (pointer: coarse) {
-        button, a {
-          min-height: 44px;
-          min-width: 44px;
-        }
+        html, body { max-width: 100%; overflow-x: hidden; }
       }
     </style>
   </head>
   <body>
-    <!-- Network background -->
-    <div class="network-bg">
-      <svg width="100%" height="100%" viewBox="0 0 1000 1000">
-        <defs>
-          <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
-            <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#333" stroke-width="0.5" opacity="0.3"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
-      </svg>
-    </div>
-    
     <main>
       <slot />
     </main>

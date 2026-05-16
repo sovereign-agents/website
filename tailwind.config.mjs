@@ -4,35 +4,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        'cyber-green': '#00ff41',
-        'electric-blue': '#0099ff',
-        'neon-purple': '#9945ff',
-        'dark-bg': '#0a0a0a',
-        'dark-surface': '#151515',
-        'dark-border': '#333333',
+        'bg-base': '#09090B',
+        'bg-surface': '#111113',
+        'bg-elevated': '#18181B',
+        'border-default': '#222225',
+        'border-subtle': '#1A1A1D',
+        'accent': '#D4C5A9',
+        'accent-dim': '#B8A88A',
+        'text-primary': '#F5F5F5',
+        'text-secondary': '#8A8A8E',
+        'text-muted': '#555558',
       },
       fontFamily: {
-        'mono': ['JetBrains Mono', 'SF Mono', 'Monaco', 'monospace'],
+        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        'mono': ['JetBrains Mono', 'SF Mono', 'monospace'],
       },
-      animation: {
-        'pulse-glow': 'pulse-glow 2s ease-in-out infinite alternate',
-        'float': 'float 6s ease-in-out infinite',
-        'network-pulse': 'network-pulse 3s ease-in-out infinite',
-      },
-      keyframes: {
-        'pulse-glow': {
-          '0%': { opacity: '0.4', transform: 'scale(1)' },
-          '100%': { opacity: '1', transform: 'scale(1.02)' },
-        },
-        'float': {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
-        'network-pulse': {
-          '0%, 100%': { opacity: '0.3' },
-          '50%': { opacity: '1' },
-        }
-      }
     },
   },
   plugins: [],
